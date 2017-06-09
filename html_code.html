@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<title>Random Number Generator</title>
+<link href="https://fonts.googleapis.com/css?family=Roboto" type="text/css" rel="stylesheet">
+
+</head>
+<body>
+
+<!--CSS start-->
+<style>
+
+body {
+ background-color: lightgray;
+}
+
+h1 {
+ font-family: Roboto;
+ text-align: center;
+ color: rgb(112, 98, 98); 
+}
+
+input {
+    color: rgb(112, 98, 98);
+    width: 20%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#input1 {
+  position: absolute;
+  left: 300px;
+}
+
+#input2 {
+  position: absolute;
+  right: 300px;
+}
+
+button {
+  position: relative;
+  top: 400px;
+  left: 600px;
+  background-color: lightgray;
+  color: rgb(112, 98, 98);
+  border-radius: 4px;
+  border: 1px solid rgb(112, 98, 98);
+  font-family: Roboto;
+  font-size: 30px;
+  
+  /*button:hover, így lesz átmenetes*/
+  -webkit-transition-duration: 0.4s; /* Safari */
+   transition-duration: 0.4s;
+}
+
+button:hover {
+  color: lightgray;
+  background-color: rgb(112, 98, 98);
+}
+
+.result {
+  position: relative;
+  top: 200px;
+  left: 650px;
+  font-size: 70px;
+  font-family: Roboto;
+  color: rgb(112, 98, 98);
+}
+
+</style>
+<!--CSS end-->
+
+<!--jquery import-->
+<script src='https://code.jquery.com/jquery-3.1.0.min.js'></script>
+
+<h1>This program will generate you a random number between the two given values</h1>
+<input type="number" id="input1" value="1">
+<input type="number" id="input2" value="10">
+<div class='result'>4</div>
+<button onclick="clickFunc()">Generate</button>
+
+<!--javascript start-->
+<script>
+
+var smallest;
+var biggest;
+
+function clickFunc() {
+
+smallest = document.getElementById("input1").value;
+biggest = document.getElementById("input2").value
+
+//$('.result').text(Math.floor(Math.random() * (biggest - smallest + 1)) + smallest);
+//document.getElementById("result").innerHTML = Math.floor(Math.random() * (biggest - smallest + 1)) + smallest;
+for(var i = 0; i != 5; i++) {
+for(var a = Math.floor(Math.random() * biggest); a > smallest; a = Math.floor(Math.random() * biggest)) {
+$('.result').text(a);
+}
+}
+}
+
+</script>
+<!--javascript end-->
+</body>
+</html>
+
+
